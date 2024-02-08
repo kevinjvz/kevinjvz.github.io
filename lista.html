@@ -29,6 +29,11 @@
         width: 100%;
       }
 
+      article{
+        padding:10px;
+        box-shadow:0px 0px 1px #000; 
+      }
+
       
     </style>
     <title>Lista</title>
@@ -36,73 +41,44 @@
   </head>
   <body>
     <h1>Personajes</h1>
-    <main>
-<article>
+    <main></main>
+
+    <script>
+      function getCharacters(done){
+        const results = fetch("https://rickandmortyapi.com/api/character
+");
+        results
+        .then(response => response.json())
+        .then(data => {
+        done(data)
+        });
+      }
+
+      getCharacters(data =>{
+
+        data.results.forEach(personaje =>{
+
+          const article =document.createRange().createContextualFragment( 
+            <article>
   <div class="image-container">
-    <img src="https://rickandmortyapi.com/api/character/avatar/289.jpeg" alt="Personaje">
+    <img src="${personaje.image}" alt="Personaje">
   </div>
 
-  <h2> Personaje</h2>
-  <span> Estado de personajes</span>  
+  <h2>${personaje.name}</h2>
+  <span>${personaje.satus}</span>  
 </article>
-      <article>
-  <div class="image-container">
-    <img src="https://rickandmortyapi.com/api/character/avatar/289.jpeg" alt="Personaje">
-  </div>
+);
+      const main =document.querySelector("main");
+      main.append(article);
+            
+          )
+        }
 
-  <h2> Personaje</h2>
-  <span> Estado de personajes</span>  
-</article>
-      <article>
-  <div class="image-container">
-    <img src="https://rickandmortyapi.com/api/character/avatar/289.jpeg" alt="Personaje">
-  </div>
+        
+      }
 
-  <h2> Personaje</h2>
-  <span> Estado de personajes</span>  
-</article>
-      <article>
-  <div class="image-container">
-    <img src="https://rickandmortyapi.com/api/character/avatar/289.jpeg" alt="Personaje">
-  </div>
-
-  <h2> Personaje</h2>
-  <span> Estado de personajes</span>  
-</article>
-      <article>
-  <div class="image-container">
-    <img src="https://rickandmortyapi.com/api/character/avatar/289.jpeg" alt="Personaje">
-  </div>
-
-  <h2> Personaje</h2>
-  <span> Estado de personajes</span>  
-</article>
-      <article>
-  <div class="image-container">
-    <img src="https://rickandmortyapi.com/api/character/avatar/289.jpeg" alt="Personaje">
-  </div>
-
-  <h2> Personaje</h2>
-  <span> Estado de personajes</span>  
-</article>
-      <article>
-  <div class="image-container">
-    <img src="https://rickandmortyapi.com/api/character/avatar/289.jpeg" alt="Personaje">
-  </div>
-
-  <h2> Personaje</h2>
-  <span> Estado de personajes</span>  
-</article>
-      <article>
-  <div class="image-container">
-    <img src="https://rickandmortyapi.com/api/character/avatar/289.jpeg" alt="Personaje">
-  </div>
-
-  <h2> Personaje</h2>
-  <span> Estado de personajes</span>  
-</article>
       
-    </main>
+    </script>
  
     
   </body>
