@@ -54,12 +54,13 @@
         });
       }
 
-      getCharacters(data =>{
+     getCharacters(data => {
 
-        data.results.forEach(personaje =>{
+       data.results.forEach(personaje =>{
+         
+       const article= document.createRange().createContextualFragment(
 
-          const article =document.createRange().createContextualFragment( 
-            <article>
+         <article>
   <div class="image-container">
     <img src="${personaje.image}" alt="Personaje">
   </div>
@@ -67,17 +68,16 @@
   <h2>${personaje.name}</h2>
   <span>${personaje.satus}</span>  
 </article>
+       );
 
-       const main =document.querySelector("main");
+      const main = document.querySelector("main");
+
       main.append(article);
-            
-);
-    
-          
-        });
+         
+     });
 
-        
-      });
+     });
+      
 
       
     </script>
