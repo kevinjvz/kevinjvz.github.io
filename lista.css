@@ -1,0 +1,83 @@
+body {
+    
+    padding: 20px; /* Ajusta el valor según el espacio deseado alrededor de los elementos */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+}
+
+
+.mi-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mi-img img {
+    width: 200px;
+    height: 200px;
+    align-items: center;
+}
+
+.Nombre_Personaje,
+.Estatus_Personaje,
+.Especie_Personaje,
+.Id_Personaje {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Nombre_Personaje p,
+.Estatus_Personaje p,
+.Especie_Personaje p,
+.Id_Personaje p {
+    margin: 0;
+    margin-right: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#my-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    width: 100%;
+  
+}
+
+.list-group-item {
+    width: 100%; 
+    margin-bottom: 10px;
+}
+
+
+#list-template {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+}
+
+#list-template .flex-grow-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+#list-template .flex-grow-1 > div {
+    margin-bottom: 10px; /* Ajusta el margen entre elementos según sea necesario */
+}
+
+#list-template .mi-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#list-template img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Añade un borde redondeado si lo deseas */
+}
+
+/* Estilos adicionales según sea necesario */
+#list-template .badge {
+    /* Agrega estilos según sea necesario para el span con la clase "badge" */
+}
