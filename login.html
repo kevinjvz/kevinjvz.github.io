@@ -6,6 +6,10 @@
     <title>Iniciar sesión</title>
     <style>
         /* Estilos omitidos para brevedad */
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -15,6 +19,7 @@
 
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required>
+        <div id="password-error" class="error-message"></div>
 
         <button type="submit">Iniciar sesión</button>
     </form>
@@ -22,11 +27,14 @@
     <script>
         function validateForm() {
             var passwordInput = document.getElementById("password");
+            var passwordError = document.getElementById("password-error");
             var password = passwordInput.value;
 
             if (password.length < 8) {
-                alert("La contraseña debe tener al menos 8 caracteres.");
+                passwordError.innerHTML = "La contraseña debe tener al menos 8 caracteres.";
                 return false;
+            } else {
+                passwordError.innerHTML = "";
             }
 
             // Puedes agregar más validaciones aquí si es necesario.
@@ -36,4 +44,5 @@
     </script>
 </body>
 </html>
+
 
