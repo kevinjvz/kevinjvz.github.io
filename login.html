@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
     <style>
-        /* Tu estilo CSS aquí */
+        /* Estilos omitidos para brevedad */
     </style>
 </head>
 <body>
-    <form id="loginForm" action="/login" method="post" onsubmit="return validateForm()">
+    <form action="/login" method="post" onsubmit="return validateForm()">
         <label for="username">Usuario:</label>
         <input type="text" id="username" name="username" required>
 
@@ -21,18 +21,19 @@
 
     <script>
         function validateForm() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
+            var passwordInput = document.getElementById("password");
+            var password = passwordInput.value;
 
-            if (username.trim() === '' || password.trim() === '') {
-                alert('Por favor, complete todos los campos.');
+            if (password.length < 8) {
+                alert("La contraseña debe tener al menos 8 caracteres.");
                 return false;
             }
 
-            // Puedes agregar más lógica de validación según tus necesidades
+            // Puedes agregar más validaciones aquí si es necesario.
 
-            return true;
+            return true; // Permite que el formulario se envíe si todas las validaciones pasan.
         }
     </script>
 </body>
 </html>
+
